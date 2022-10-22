@@ -1,0 +1,26 @@
+package (your package name);
+
+import java.util.Scanner;
+public class (your class name)
+{
+	public static void main(String args[])
+	{   
+		System.out.println("Octal'a donusturmek istediginiz decimal sayiyi giriniz : ");
+		Scanner scanner = new Scanner(System.in); 
+		int decimal = scanner.nextInt();
+		int octal[] = new int[10];
+		int i = 0; 
+		while(decimal > 0)
+		{       
+			int r = decimal % 8;
+			octal[i++] = r;
+			decimal = decimal/8;
+		}
+		
+		System.out.print("Octal karsiligi : ");
+		for(int j = i-1 ; j >= 0 ; j--)
+		System.out.print(octal[j]);
+		scanner.close();
+	}
+	
+}
